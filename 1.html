@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <login :abc="msg" @fun1="getfu"></login>
+        <login></login>
+
+    </div>
+
+    <template id="alogin">
+        <div>
+            <input type="button" name="" id="" value="修改">
+            {{ms}}
+            {{c}}
+            {{ac}}
+        </div>
+    </template>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '父组件',
+                fs: ''
+            },
+            methods: {
+            },
+            components: {
+                login: {
+                    template: "#alogin",
+                    data: function () {
+                        return { ms: '子组件', ac: 'a' }
+                    },
+                    props: ['c'],
+                    methods: {
+
+                    }
+                },
+                register: {
+                    template: '#areg',
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
