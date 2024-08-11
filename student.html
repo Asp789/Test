@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <table border="1">
+            <template v-for="x in stuarr">
+                <tr v-if="x.score>60">
+                    <td>{{x.name}}</td>
+                    <td>{{x.score}}</td>
+                </tr>
+            </template>
+        </table>
+    </div>
+    <script>
+        var Vue1 = new Vue({
+            el: '#app',
+            data: {
+                stuarr: [
+                    { "name": "张三", "score": 68 },//冒号在引号外面，在引号内则不显示
+                    { "name": "李四", "score": 48 },
+                    { "name": "王五", "score": 75 },
+                    { "name": "赵六", "score": 55 }]
+
+            }
+        })
+    </script>
+</body>
+
+</html>
